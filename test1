@@ -1,0 +1,39 @@
+agenda = {}  # Dictionary to store the agenda items
+
+def add_item():
+    date = input("Enter the date: ")
+    item = input("Enter the agenda item: ")
+    agenda[date] = item
+    print("Agenda item added successfully!")
+
+def remove_item():
+    date = input("Enter the date of the agenda item you want to remove: ")
+    if date in agenda:
+        del agenda[date]
+        print("Agenda item removed successfully!")
+    else:
+        print("Agenda item not found for the given date.")
+
+def view_agenda():
+    print("Agenda:")
+    for date, item in agenda.items():
+        print(f"{date}: {item}")
+
+while True:
+    print("\nAGENDA PROGRAM")
+    print("1. Add agenda item")
+    print("2. Remove agenda item")
+    print("3. View agenda")
+    print("4. Quit")
+    choice = input("Enter your choice (1-4): ")
+    
+    if choice == "1":
+        add_item()
+    elif choice == "2":
+        remove_item()
+    elif choice == "3":
+        view_agenda()
+    elif choice == "4":
+        break
+    else:
+        print("Invalid choice. Please try again.")
